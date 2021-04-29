@@ -397,3 +397,46 @@ form.sign-in-form {
     left: 50%;
   }
 }
+
+input:-webkit-autofill {
+  -webkit-box-shadow:0 0 0 30px  #f0f0f0 inset !important; /* Change the color to your own background color */
+  -webkit-text-fill-color: #333;
+  size: 1px;
+  border-radius:20%;
+  border:0%;
+  max-width: 380px;
+  width: 100%;
+  background-color: #f0f0f0;
+  margin: 5px 0;
+  height: 45px;
+  border-radius: 45px;
+  display: grid;
+  grid-template-columns: 15% 85%;
+  padding: 0 0.8rem;
+  position: relative;
+ 
+  
+}
+
+input:-webkit-autofill:focus {
+  -webkit-box-shadow: 0 0 0 0 30px  #f0f0f0 inset !important;
+  -webkit-text-fill-color: #333;
+  size: 1px;
+  border-radius:20%;
+  border: 0%;
+  max-width: 380px;
+  width: 100%;
+  background-color: #f0f0f0;
+  margin: 5px 0;
+  height: 45px;
+  border-radius: 45px;
+  display: grid;
+  grid-template-columns: 15% 85%;
+  padding: 0 0.8rem;
+  position: relative;
+  
+}
+
+input{
+  background-color: #f0f0f0;
+}
