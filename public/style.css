@@ -253,8 +253,111 @@ form.sign-in-form {
 .container.sign-up-mode .right-panel {
   pointer-events: all;
 }
+input:-webkit-autofill {
+  -webkit-box-shadow:0 0 0 30px  #f0f0f0 inset !important; /* Change the color to your own background color */
+  -webkit-text-fill-color: #333;
+  size: 1px;
+  border-radius:20%;
+  border:0%;
+  max-width: 380px;
+  width: 100%;
+  background-color: #f0f0f0;
+  margin: 5px 0;
+  height: 45px;
+  border-radius: 45px;
+  display: grid;
+  grid-template-columns: 15% 85%;
+  padding: 0 0.8rem;
+  position: relative;
+ 
+  
+}
+
+input:-webkit-autofill:focus {
+  -webkit-box-shadow: 0 0 0 0 30px  #f0f0f0 inset !important;
+  -webkit-text-fill-color: #333;
+  size: 1px;
+  border-radius:20%;
+  border: 0%;
+  max-width: 380px;
+  width: 100%;
+  background-color: #f0f0f0;
+  margin: 5px 0;
+  height: 45px;
+  border-radius: 45px;
+  display: grid;
+  grid-template-columns: 15% 85%;
+  padding: 0 0.8rem;
+  position: relative;
+  
+}
+
+@media (max-width: 570px) {
+  
+  form {
+    padding: 0 1.5rem;
+  }
+
+  .image {
+    display: none;
+  }
+  .panel .content {
+    padding: 0.5rem 1rem;
+  }
+  .container {
+    padding: 1.5rem;
+  }
+
+  .container:before {
+    bottom: 72%;
+    left: 50%;
+  }
+
+  .container.sign-up-mode:before {
+    bottom: 28%;
+    left: 50%;
+  }
+}
 
 @media (max-width: 870px) {
+  input:-webkit-autofill {
+    -webkit-box-shadow:0 0 0 30px  #f0f0f0 inset !important; /* Change the color to your own background color */
+    -webkit-text-fill-color: #333;
+    size: 1px;
+    border-radius:20%;
+    border:0%;
+    max-width: 380px;
+    width: 100%;
+    background-color: #f0f0f0;
+    margin: 5px 0;
+    height: 39px;
+    border-radius: 39px;
+    display: grid;
+    grid-template-columns: 15% 85%;
+    padding: 0 0.8rem;
+    position: relative;
+   
+    
+  }
+  
+  input:-webkit-autofill:focus {
+    -webkit-box-shadow: 0 0 0 0 30px  #f0f0f0 inset !important;
+    -webkit-text-fill-color: #333;
+    size: 1px;
+    border-radius:20%;
+    border: 0%;
+    max-width: 380px;
+    width: 100%;
+    background-color: #f0f0f0;
+    margin: 5px 0;
+    height: 39px;
+    border-radius: 39px;
+    display: grid;
+    grid-template-columns: 15% 85%;
+    padding: 0 0.8rem;
+    position: relative;
+    
+  }
   .input-field{
     max-width: 380px;
   width: 100%;
@@ -268,6 +371,9 @@ form.sign-in-form {
   position: relative;
 
   }
+
+
+
   .container {
     min-height: 800px;
     height: 100vh;
@@ -371,72 +477,10 @@ form.sign-in-form {
 }
 
 
-@media (max-width: 570px) {
-  
-  form {
-    padding: 0 1.5rem;
-  }
 
-  .image {
-    display: none;
-  }
-  .panel .content {
-    padding: 0.5rem 1rem;
-  }
-  .container {
-    padding: 1.5rem;
-  }
 
-  .container:before {
-    bottom: 72%;
-    left: 50%;
-  }
-
-  .container.sign-up-mode:before {
-    bottom: 28%;
-    left: 50%;
-  }
-}
-
-input:-webkit-autofill {
-  -webkit-box-shadow:0 0 0 30px  #f0f0f0 inset !important; /* Change the color to your own background color */
-  -webkit-text-fill-color: #333;
-  size: 1px;
-  border-radius:20%;
-  border:0%;
-  max-width: 380px;
-  width: 100%;
-  background-color: #f0f0f0;
-  margin: 5px 0;
-  height: 45px;
-  border-radius: 45px;
-  display: grid;
-  grid-template-columns: 15% 85%;
-  padding: 0 0.8rem;
-  position: relative;
  
-  
-}
 
-input:-webkit-autofill:focus {
-  -webkit-box-shadow: 0 0 0 0 30px  #f0f0f0 inset !important;
-  -webkit-text-fill-color: #333;
-  size: 1px;
-  border-radius:20%;
-  border: 0%;
-  max-width: 380px;
-  width: 100%;
-  background-color: #f0f0f0;
-  margin: 5px 0;
-  height: 45px;
-  border-radius: 45px;
-  display: grid;
-  grid-template-columns: 15% 85%;
-  padding: 0 0.8rem;
-  position: relative;
-  
-}
 
-input{
-  background-color: #f0f0f0;
-}
+
+
