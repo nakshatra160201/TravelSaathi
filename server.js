@@ -1,19 +1,20 @@
-require('dotenv').config();
 const express = require('express');
 const app = express();
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
-const session = require('express-session');
+var session = require('express-session');
 const nodemailer = require('nodemailer');
 const otpGenerator = require('otp-generator')
 app.use(bodyParser.urlencoded({ extended: true }));
 app.set('view engine', 'ejs');
 app.use(express.static(__dirname + '/public'));
+require('dotenv').config();
 app.use(session({
     secret: process.env.SECRET, 
     name: process.env.NAME
     , saveUninitialized: false
 }));
+
 
 //database connections
 
@@ -48,7 +49,11 @@ var transporter = nodemailer.createTransport({
 
 //routes
 app.get('/',(req,res)=>{
+    
+    if(!req.session.loggedIn)
     res.render('login');
+    else
+    res.send("already logged in .. logout using /logout");
 })
 
 app.post('/authenticate', (req, res) => {
@@ -77,7 +82,7 @@ app.post('/authenticate', (req, res) => {
 
 
 app.get('/forgot', (req, res) => {
-    if(req.session.loggedIn===false)
+    if(!req.session.loggedIn)
     res.render('forgotpassword');
 });
 
