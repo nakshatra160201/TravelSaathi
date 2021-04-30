@@ -76,105 +76,106 @@ app.post('/authenticate', (req, res) => {
 });
 
 
-// app.get('/forgot', (req, res) => {
-//     res.render('forgot');
-// });
+app.get('/forgot', (req, res) => {
+    if(req.session.loggedIn===false)
+    res.render('forgotpassword');
+});
 
-// app.post('/reset', (req, res) => {
+app.post('/reset', (req, res) => {
 
-//     User.findOne({ email: req.body.username }, function (err, found) {
-//         if (err) {
-//             console.log(err);
-//         }
-//         else {
-//             if (found) {
-//                 found.resetPasswordToken = String(otpGenerator.generate(6));
-//                 found.resetPasswordExpires = Date.now() + 300000; // 5 min in ms
-//                 found.save(function (err) {
-//                     if (!err) {
-//                         console.log("saved success");
-//                     }
-//                     else {
-//                         res.send('try later ');
-//                     }
-//                 });
+    User.findOne({ email: req.body.username }, function (err, found) {
+        if (err) {
+            console.log(err);
+        }
+        else {
+            if (found) {
+                found.resetPasswordToken = String(otpGenerator.generate(6));
+                found.resetPasswordExpires = Date.now() + 300000; // 5 min in ms
+                found.save(function (err) {
+                    if (!err) {
+                        console.log("saved success");
+                    }
+                    else {
+                        res.send('try later ');
+                    }
+                });
 
 
 
-//                 var mailOptions = {
-//                     from: 'masterconcepts.no.reply@gmail.com',
-//                     to: found.email,
-//                     subject: 'Password reset for masterconcepts.com',
-//                     text: 'Someone requested to change the password for masterconcepts.com account with username: ' + found.email + ' .If it wasnt you then dont worry ,your password will remain unchanged. Dont share this OTP with anyone . This OTP will remain valid for 5 minutes OTP: ' + found.resetPasswordToken
-//                 };
+                var mailOptions = {
+                    from: 'travelsaathi21@gmail.com',
+                    to: found.email,
+                    subject: 'Password reset for travelsaathi.com',
+                    text: 'Someone requested to change the password for travelsaathi.com account with username: ' + found.email + ' .If it wasnt you then dont worry ,your password will remain unchanged. Dont share this OTP with anyone . This OTP will remain valid for 5 minutes OTP: ' + found.resetPasswordToken
+                };
 
-//                 transporter.sendMail(mailOptions, function (error, info) {
-//                     if (error) {
-//                         console.log(error);
-//                     } else {
-//                         req.session.forgotuname = found.email;
-//                         console.log('Email sent: ');
-//                         res.render('checkotp');
-//                     }
-//                 });
-//             }
-//             else {
-//                 res.send("not registered");
-//             }
-//         }
-//     });
+                transporter.sendMail(mailOptions, function (error, info) {
+                    if (error) {
+                        console.log(error);
+                    } else {
+                        req.session.forgotuname = found.email;
+                        console.log('Email sent: ');
+                        res.render('OTP');
+                    }
+                });
+            }
+            else {
+                res.send("not registered");
+            }
+        }
+    });
 
-// });
+});
 
-// app.post('/checkotp', (req, res) => {
+app.post('/checkotp', (req, res) => {
 
-//     User.findOne({ email: req.session.forgotuname }, function (err, found) {
-//         if (err) {
-//             console.log(err);
-//         }
-//         else {
-//             if (found) {
-//                 if (found.resetPasswordToken === req.body.otp && found.resetPasswordExpires > Date.now()) {
-//                     found.password = req.body.passw;
+    User.findOne({ email: req.session.forgotuname }, function (err, found) {
+        if (err) {
+            console.log(err);
+        }
+        else {
+            if (found) {
+                if (found.resetPasswordToken === req.body.otp && found.resetPasswordExpires > Date.now()) {
+                    found.password = req.body.passw;
 
-//                     found.save(function (err) {
-//                         if (!err) {
-//                             console.log("saved success");
+                    found.save(function (err) {
+                        if (!err) {
+                            console.log("saved success");
 
-//                             var mailOptions = {
-//                                 from: 'masterconcepts.no.reply@gmail.com',
-//                                 to: req.session.forgotuname,
-//                                 subject: 'Password changed successfully',
-//                                 text: 'Your password was changed successfully.'
-//                             };
+                            var mailOptions = {
+                                from: 'travelsaathi21@gmail.com',
+                                to: req.session.forgotuname,
+                                subject: 'Password changed successfully',
+                                text: 'Your password was changed successfully.'
+                            };
 
-//                             transporter.sendMail(mailOptions, function (error, info) {
-//                                 if (error) {
-//                                     console.log(error);
-//                                 } else {
-//                                     req.session.forgotuname = found.email;
-//                                     console.log('Email sent: ' + info.response);
-//                                     res.render('checkotp');
-//                                 }
-//                             });
-//                             res.send('success');
-//                         }
-//                         else {
-//                             res.send('wrong otp');
-//                         }
-//                     });
-//                 }
-//                 else {
-//                     res.send('smthng');
-//                 }
-//             }
-//             else {
-//                 res.send("no such user");
-//             }
-//         }
-//     });
+                            transporter.sendMail(mailOptions, function (error, info) {
+                                if (error) {
+                                    console.log(error);
+                                } else {
+                                    req.session.forgotuname = found.email;
+                                    console.log('Email sent: ' + info.response);
+                                    res.redirect('/');
+                                }
+                            });
+                            
+                        }
+                        else {
+                            res.send('wrong otp');
+                        }
+                    });
+                }
+                else {
+                    res.send('ERROR 404');
+                }
+            }
+            else {
+                res.send("no such user");
+            }
+        }
+    });
 
-// });
+});
 
 app.get('/logout', (req, res) => {
     //req.session.destroy((err)=>{})
