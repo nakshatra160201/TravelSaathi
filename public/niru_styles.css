@@ -1,0 +1,342 @@
+#title{
+  background-color: #98CBB4;
+}
+.container-fluid.cf{
+  padding:0;
+}
+@viewport {
+  width: device-width ;
+  zoom: 1.0 ;
+}
+.hd{
+  display: flex;
+}
+body{
+  font-family: 'Pattaya',sans-serif;
+}
+header{
+  background-repeat: no-repeat;
+  display: block;
+  background-image: url('images/bike.jpg');
+  background-size: 100%;
+  padding: 35px;
+  height: 500px;
+  text-align: center;
+}
+h3{
+  color:#16576A;
+}
+a{
+  font-size: 1.5rem;
+  position: relative;
+}
+header a {
+  color: white;
+  margin-top: 40px;
+  text-align: center;
+  text-decoration: none;
+}
+li{
+display: inline-block;
+width: 100px;
+font-size: 20px;
+margin-right: 150px;
+}
+.help{
+  width: 7%;
+}
+.container-fluid{
+  padding-top: 80px;
+  font-size: 1.5rem;
+  color: #fff;
+}
+.feature{
+  text-align: center;
+  padding: 5% 5%;
+  background-color: #98CBB4;
+}
+.sub-feature{
+  padding: 2% 5%;
+  text-align: center;
+}
+p {
+  font-size: 1.2rem;
+  padding: 0 17%;
+  color: #184d47;
+}
+.icon{
+  color: #16576A;
+  padding-bottom: 10%;
+}
+.fixer{
+  color: blue;
+  margin-right: 10px;
+}
+.fas:hover{
+  color: #fff;
+}
+.lambe{
+width: 200px;
+
+}
+.input-group{
+  padding: 2%;
+}
+.submit-button{
+  padding: 4%;
+  padding-left:18%;
+  padding-bottom:10px;
+  padding-top:22%;
+  /* padding-left: 100px; */
+}
+.btn{
+  padding-left: 100px;
+}
+.subm{
+  width: 100px;
+  padding-left: 700px;;
+}
+.social{
+  padding: 5%;
+  color:#1DA1F2;
+}
+.ins{
+  color: pink;
+}
+.social:hover{
+  color: blue;
+}
+.wt{
+    color:  #98CBB4;
+}
+.wt:hover{
+  color: #184d47;
+}
+.tb{
+  color: white;
+  text-align: center;
+  padding: 1%;
+}
+.nav{
+  color: transparent;
+  height: 7vh;
+  color: white;
+}
+.txtnav{
+  padding:  5%;
+  margin: 5%;
+  /* padding-left: 8%; */
+  text-align: center;
+  color: white;
+  text-decoration-color: white;
+}
+.temp{
+  width: 500px;
+}
+.resname{
+  width: 70vw;
+}
+.res{
+  position: relative;
+  padding-top:8%;
+  padding-left:20%;
+}
+.rehelp{
+  background-color:#e4efe7;
+  padding-bottom:5%;
+  background-image: linear-gradient(to left,rgba(255,255,255,0.5),rgba(0,0,0,0.5));
+  width:100%;
+  margin:0px;
+  /* border-radius:  */
+}
+.intro-text{
+  padding-top:10%;
+  font-size:1.7rem;
+}
+.hid{
+  display: none;
+}
+.hd{
+  background-image: linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)), url('images/bike.jpg');
+}
+.ctxt{
+  text-align: center;
+  padding: 5%;
+}
+.ccent{
+  text-align: center;
+}
+.bigp{
+  padding: 0;
+  margin: 0;
+}
+.par{
+background-color: #98CBB4;
+  margin:  0px 0px;
+  width: 100%;
+  padding: 10% 30%;
+}
+.pcard{
+
+}
+.cbd{
+  margin: 0;
+}
+.cb{
+  /* width: 600px; */
+  background-color: white;
+  box-shadow: 0 0 20px 7px rgba(0,0,0,0.1);
+}
+.fs{
+  color:#000;
+}
+@media screen and (max-width:416px) {
+     .mdc
+     {
+       font-size: 1rem;
+     }
+
+}
+@media screen and (max-width:354px) {
+     .mdc
+     {
+       font-size: 0.9rem;
+     }
+
+}
+@media screen and (max-width:324px) {
+     .mdc
+     {
+       font-size: 0.78rem;
+     }
+
+}
+@media screen and (max-width:289px) {
+     .mdc
+     {
+       font-size: 0.67rem;
+     }
+
+}
+@media screen and (max-width: 672px) {
+  #title{
+    text-align: center;
+  }
+  .res{
+    position: static;
+    width: 500px;
+    padding-left: 25%;
+  }
+  .submit-button{
+    padding-right: 15%;
+  }
+  .fs{
+    font-size: 0.8rem;
+  }
+}
+@media screen and (max-width: 544px) {
+  #title{
+    text-align: center;
+  }
+  .res{
+    width: 400px;
+    margin-right: 2%;
+  }
+  .hid{
+    position: relative;
+    display: inline-block;
+    text-align: center;
+    padding-left: 5%;
+    padding-top: 4%;
+  }
+  .submit-button{
+    display: none;
+  }
+}
+@media screen and (max-width: 475px) {
+  #title{
+    text-align: center;
+  }
+  .res{
+    padding-left: 50px;
+    width: 325px;
+  }
+  .intro-text{
+    font-size: 1.5rem;
+  }
+  .hid{
+    position: relative;
+    display: inline-block;
+    text-align: center;
+    padding-left: 16%;
+    padding-top: 4%;
+  }
+  .fs{
+    font-size: 0.7rem;
+  }
+
+}
+@media screen and (max-width: 457px) {
+  #title{
+    text-align: center;
+  }
+  .res{
+    margin: 5%;
+  }
+  .hid{
+    position: relative;
+    display: inline-block;
+    text-align: center;
+    padding-left: 6%;
+    padding-top: 4%;
+  }
+  .fs{
+    font-size: 0.5rem;
+  }
+
+}
+@media screen and (max-width: 414px) {
+  #title{
+    text-align: center;
+  }
+  .res{
+    width: 300px;
+  }
+  .intro-text{
+    font-size: 1.3rem;
+  }
+  .hd{
+    background-image: linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5));
+  }
+
+}
+@media screen and (max-width: 369px) {
+  #title{
+    text-align: center;
+  }
+  .hd{
+    background-image: linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5));
+  }
+  .res{
+    width: 270px;
+  }
+  .intro-text{
+    font-size: 1.3rem;
+  }
+
+}
+@media screen and (max-width: 280px) {
+  #title{
+    text-align: center;
+  }
+  .hd{
+    background-image: linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5));
+  }
+  .res{
+    width: 270px;
+  }
+  .intro-text{
+    font-size: 1.3rem;
+  }
+
+}

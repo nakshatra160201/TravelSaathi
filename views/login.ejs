@@ -8,6 +8,33 @@
       src="https://kit.fontawesome.com/64d58efce2.js"
       crossorigin="anonymous"
     ></script>
+    <script>
+      function ValidateEmail(mail) 
+        {
+        if (/^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/.test(mail))
+          {
+            return (true)
+          }
+            return (false)
+        }
+      function validateLoginForm() {
+        var x = document.forms["login"]["username"].value;
+        var y = document.forms["login"]["password"].value;
+        if (x == "" || y=="") {
+          alert("Empty credentials not allowed");
+          return false;
+        }
+        if(!ValidateEmail(x)){
+          alert("Invalid username");
+          return false;
+        }
+        if(!x.includes("@thapar.edu")){
+          alert("Invalid username: only thapar.edu is allowed");
+          return false;
+        }
+        return true;
+      }
+    </script>
     <link rel="stylesheet" href="/style.css" />
     <title>Sign in & Sign up Form</title>
   </head>
@@ -15,7 +42,7 @@
     <div class="container">
       <div class="forms-container">
         <div class="signin-signup">
-          <form action="/authenticate" class="sign-in-form" method="post">
+          <form name='login' action="/authenticate" class="sign-in-form" onsubmit="return validateLoginForm()" method="post">
             <img src="/new.png" class="rounded-circle" alt="logo" width="150" height="150">
             <h2 class="title">Sign in</h2>
             <div class="input-field">
